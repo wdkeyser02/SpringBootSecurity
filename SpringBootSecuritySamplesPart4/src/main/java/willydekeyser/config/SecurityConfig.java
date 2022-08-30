@@ -20,9 +20,9 @@ public class SecurityConfig {
 	SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 		http
 		.authorizeHttpRequests((authorize) -> authorize
+				.mvcMatchers(HttpMethod.GET, "/").anonymous()
 				.mvcMatchers(HttpMethod.GET, "/user").hasAuthority("ROLE_USER")
 				.mvcMatchers(HttpMethod.GET, "/admin").hasAuthority("ROLE_ADMIN")
-				.mvcMatchers(HttpMethod.GET, "/").permitAll()
 				.anyRequest().denyAll()
 		)
 		.httpBasic()
