@@ -37,7 +37,7 @@ public class MyUsersDetailsService implements UserDetailsService{
         	authorities.add(authority);
         }
         user.setAuthorities(authorities);
-        return new MyUsersDetails(user);
+        return (UserDetails) new MyUsersDetails(user);
 	}
 
 }
