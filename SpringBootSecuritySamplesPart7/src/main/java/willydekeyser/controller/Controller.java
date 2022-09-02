@@ -34,7 +34,6 @@ public class Controller {
 				<p><a href='/logout'>Logout</a></p>
 				""";			
 		return ResponseEntity.ok().body(response);
-		//return "<h1>Welkom</h1>";
 	}
 	
 	@GetMapping("/user")
@@ -62,7 +61,7 @@ public class Controller {
 	@GetMapping("/moderator")
 	public ResponseEntity<String> moderator(Authentication authentication) {
 		String response = """ 
-				<h1>Welcome</h1>
+				<hWelcome</h1>
 				<h2>Endpoint: moderator</h2>
 				<p>User: %s</p>
 				<p>Authorities: %s</p>
